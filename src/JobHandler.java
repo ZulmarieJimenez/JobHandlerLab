@@ -26,6 +26,45 @@ public class JobHandler {
 		
 		//Add Code Here [You have to use Switch and If/Else to get graded] 
 		
+		if(yearlySalary >= 100000){
+			currentRank = 80;
+		}
+		
+		else if(yearlySalary < 100000 &&  yearlySalary > 50000){
+			currentRank = 60;
+		}
+		
+		else if(yearlySalary < 50000 &&  yearlySalary > 10000){
+			currentRank = 40;
+		}
+		else{
+			currentRank = 20;
+		}
+		
+		switch(warningTotals){
+		
+		case 0:
+			warningDeRank = 0;
+			break;
+			
+		case 1:
+			warningDeRank = 5;
+			break;
+		
+		case 2:
+			warningDeRank = 10;
+			break;
+			
+		case 3:
+			warningDeRank = 15;
+			break;
+		
+		
+		default:
+			warningDeRank = warningTotals*6;
+		}
+		
+		
 		return currentRank - warningDeRank;
 	}
 	
@@ -52,6 +91,33 @@ public class JobHandler {
 		if(eRank <= 0) { return qualify;}
 		
 		//Add Code Here [You have to use Switch and If/Else to get graded]
+		int bonus;
+		
+		switch(seniority){
+		
+		case 1:
+			bonus= 5;
+			break;
+		
+		case 2:
+			bonus= 10;
+			break;
+		
+		case 3:
+			bonus= 20;
+			break;
+		
+		default:
+			bonus= 0;
+			
+			
+		}
+		
+		eRank += bonus;
+		
+		
+		if ( eRank >= jobRank || !jobType)
+			qualify = true;
 		
 		return qualify; 
 	}
