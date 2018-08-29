@@ -82,7 +82,22 @@ public class Employee {
 		
 		//Add Code Here [You have to use If/Else to get graded]
 		
-		return 0;// Temporal Return
+		if(this.yearService < 1){
+			return 0 ;
+		}
 		
+		else if(this.yearService >= 1 && this.yearService < 5){
+			return 1 ;
+		}
+		
+		else if(this.yearService >= 5 && this.yearService <10){
+			return 2 ;
+		}
+		
+		else {
+			
+		
+		return 3;// Temporal Return
+		}
 	}
 }
